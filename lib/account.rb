@@ -14,17 +14,19 @@ class Account
   end 
 
   def withdraw(amount)
-    record_transaction(-amount, (@balance - amount)) # minus value here due to withdrawal 
     fail 'Insufficient Balance' if @balance < amount
+    record_transaction(-amount, (@balance - amount)) # minus value here due to withdrawal 
     @balance -= amount 
     #will put statement method call here 
   end 
 
-  # def statement 
-  #   @transactions.each do |trans|
-  #     p " #{trans.date} || #{trans.amount} || #{trans.balance}"
-  #   end 
-  # end 
+  def statement 
+    statement = "    date    || credit || debit || balance || time " + "\n" 
+    @transactions.each do |trans|
+      statement << " #{trans.date} || #{trans.amount} || #{trans.post_transaction_balance} || #{trans.time}" + "\n"
+    end 
+    p statement 
+  end 
 
   private 
 

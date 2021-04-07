@@ -1,5 +1,5 @@
 RSpec.describe Account do 
-  context ":Set up behaviour:" do 
+  context ": Set up behaviour:" do 
     it 'contains an initial balance of 0 pounds ' do 
       expect(subject.balance).to eq(0)
     end 
@@ -18,7 +18,7 @@ RSpec.describe Account do
     end 
   end 
 
-  context ':normal operation:' do 
+  context ': normal operation:' do 
     it 'allows the user to deposit money' do 
       subject.deposit(100)
       expect(subject.balance).to eq(100)
@@ -36,16 +36,14 @@ RSpec.describe Account do
     it 'correctly creates a transaction object when a withdrawal or deposit is made' do 
       deposit_100_withdraw_99
       expect(subject.transactions.size).to eq(2)
-      p subject.transactions
       expect(subject.transactions[0].amount).to eq(100)
       expect(subject.transactions[1].amount).to eq(-99)
     end 
 
-    # it 'can display the transation history in a statement' do 
-    #   deposit_100_withdraw_99
-    #   p example_statement
-    #   expect(subject.statement).to eq(example_statement)
-    # end
+    it 'can display the transation history in a statement' do 
+      deposit_100_withdraw_99
+      expect(subject.statement).to include("100 || 100 ", "-99 || 1")
+    end
 
 
   end 
