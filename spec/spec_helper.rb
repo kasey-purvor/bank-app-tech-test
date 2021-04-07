@@ -1,24 +1,12 @@
 require 'account'
 require 'transaction'
-
+require 'simplecov'
+SimpleCov.start
 
 def deposit_100_withdraw_99
   subject.deposit(100)
   subject.withdraw(99)
-end 
-
-def example_statement 
-  "date || credit || debit || balance || time \n
-  #{(/\d{4}-\d{2}-\d{2}/)} || || 100 || 100 || #{(/\d{2}:\d{2}:\d{2}/)} \n 
-  /\d{4}-\d{2}-\d{2}/ || 99 ||  || 1 || #{(/\d{2}:\d{2}:\d{2}/)} "
-end 
-
-
-
-
-
-
-
+end
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
