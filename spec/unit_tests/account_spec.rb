@@ -38,12 +38,18 @@ RSpec.describe Account do
       expect(subject.transactions.size).to eq(2)
       expect(subject.transactions[0].amount).to eq(100)
       expect(subject.transactions[1].amount).to eq(-99)
+      print subject.statement
     end 
 
     it 'can display the transation history in a statement' do 
       deposit_100_withdraw_99
-      expect(subject.statement).to include("100 || 100 ", "-99 || 1")
+      expect(subject.statement).to include("100", "99", "1")
     end
+
+    it 'can display the statement in the correct format with the correct collumn spacing' do 
+      deposit_100_withdraw_99
+      expect(subject.statement).to match(/\d{12}||\d{8}||\d{9}||\d{12}/)
+    end 
 
 
   end 

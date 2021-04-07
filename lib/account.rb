@@ -21,15 +21,16 @@ class Account
   end 
 
   def statement 
-    statement = "    date    || credit || debit || balance || time " + "\n" 
+    statement = "Date".center(12) + '||' + "Credit".center(9) + '||' + "debit".center(9) + '||' + "Balance".center(10) + '||' + "Time".center(10) + "\n"
     @transactions.each do |trans|
-      statement << " #{trans.date} || #{trans.amount} || #{trans.post_transaction_balance} || #{trans.time}" + "\n"
+      statement << "#{trans.date.center(12)}||#{trans.credit_or_debit}||#{trans.post_transaction_balance.to_s.rjust(9)} ||#{trans.time.center(10)} \n"
     end 
-    p statement 
+    print statement   
+    return statement
   end 
 
   private 
-
+ 
   def record_transaction(amount, post_transaction_balance)
     @transactions << Transaction.new(amount, post_transaction_balance )
   end 

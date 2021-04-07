@@ -17,7 +17,10 @@ RSpec.describe Transaction do
 
   context ':normal operational:' do 
     it 'format itself into either credit or debit for statement printing' do 
-      
+      deposit = Transaction.new(100, 100)
+      withdrawal = Transaction.new(-50, 50)
+      expect(deposit.credit_or_debit).to eq("     100 ||         ") #long whitespace is 9 characters.
+      expect(withdrawal.credit_or_debit).to eq("         ||      50 ") # long whitespace is 9 chars
     end 
   end 
 end 
