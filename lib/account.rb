@@ -27,7 +27,7 @@ class Account
     statement = statement_header
     # iterates through the transactions and formats the data into a statement
     @transactions.each do |trans|
-      statement << "#{trans.date.center(12)}||#{trans.credit_or_debit}||#{trans.post_transaction_balance.to_s.rjust(9)} ||#{trans.time.center(10)} \n"
+      statement << "#{trans.date.center(12)}||#{trans.credit_or_debit}||#{trans.post_transaction_balance.round(2).to_s.rjust(9)} ||#{trans.time.center(10)} \n"
     end
     print statement
     return statement
