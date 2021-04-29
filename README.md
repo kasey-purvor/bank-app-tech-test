@@ -26,18 +26,22 @@ For this task I allocated myself 48 hours. Therefore I decided to avoid making s
 1. `$cd bank-app-tech-test`
 1. `$bundle install`
 1. $` irb -r './lib/account.rb'` 
-2. ![alt text](https://github.com/[kasey-purvor]/[bank-app-tech-test]/blob/[master]/program_loaded.png?raw=true)
-3. ![Alt text](../master/images/program_loaded.png?raw=true "Title")
-
 4.  Create an 'account' object. Name is optional   `$account = Account.new("your name here")`
+![program_loaded](https://user-images.githubusercontent.com/67878899/116536995-8eaeef00-a8dd-11eb-86a2-3c0dcfdf7443.png)
+
 5. Commands Include (the '; nil' prevents IRB from printing the whole object which is messy):   
   1. Deposit `$account.deposit(number); nil`
+  ![successful_deposit](https://user-images.githubusercontent.com/67878899/116537035-9a021a80-a8dd-11eb-82ec-2fd9544ccfd7.png)
   1. Withdraw `$account.withdraw(number); nil`
+  ![successful_withdrawal](https://user-images.githubusercontent.com/67878899/116537069-a6867300-a8dd-11eb-8c27-e340b704616c.png)
   1. Print Statement `$account.statement; nil`
+  ![statement](https://user-images.githubusercontent.com/67878899/116537510-3f1cf300-a8de-11eb-9bf3-3a63f6f2c556.png)
   
 2. Other Features Include:  
     1. Overdraft protection. Will not allow user to have negative balance
-    1. 8 figure transaction maximum. (before columns become misaligned on statements) 
+    ![prevent_overdraw](https://user-images.githubusercontent.com/67878899/116537565-4f34d280-a8de-11eb-8e03-246d4686b729.png)
+    1. 8 figure transaction maximum. (before collumns become misaligned on statements) 
+    ![8_figure_alignment](https://user-images.githubusercontent.com/67878899/116537758-899e6f80-a8de-11eb-9f7c-5b70954ab578.png)
     1. Date and time stamps for each transaction 
 
 3. Running Tests:
