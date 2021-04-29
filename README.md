@@ -27,8 +27,10 @@ For this task I allocated myself 48 hours. Therefore I decided to avoid making s
 1. `$bundle install`
 1. $` irb -r './lib/account.rb'` 
 2. ![alt text](https://github.com/[kasey-purvor]/[bank-app-tech-test]/blob/[master]/program_loaded.png?raw=true)
-3.  Create an 'account' object. Name is optional   `$account = Account.new("your name here")`
-4. Commands Include (the '; nil' prevents IRB from printing the whole object which is messy):   
+3. ![Alt text](./images/program_loaded.png?raw=true "Title")
+
+4.  Create an 'account' object. Name is optional   `$account = Account.new("your name here")`
+5. Commands Include (the '; nil' prevents IRB from printing the whole object which is messy):   
   1. Deposit `$account.deposit(number); nil`
   1. Withdraw `$account.withdraw(number); nil`
   1. Print Statement `$account.statement; nil`
