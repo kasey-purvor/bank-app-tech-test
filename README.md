@@ -23,14 +23,15 @@ For this task I allocated myself 48 hours. Therefore I decided to avoid making s
 ### Running The Program 
 
 1. $`git clone https://github.com/kasey-purvor/bank-app_Tech-test.git`
-1. `$cd bank_tech_test`
+1. `$cd bank-app-tech-test`
 1. `$bundle install`
 1. $` irb -r './lib/account.rb'` 
-1.  Create an 'account' object. Name is optional   `$account = Account.new("your name here")`
-1. Commands Include:   
-  1. Deposit `$account.deposit(number)`
-  1. Withdraw `$account.withdraw(number)`
-  1. Print Statement `$account.statement`
+2. ![alt text](https://github.com/[kasey-purvor]/[bank-app-tech-test]/blob/[main]/program_loaded.png?raw=true)
+3.  Create an 'account' object. Name is optional   `$account = Account.new("your name here")`
+4. Commands Include (the '; nil' prevents IRB from printing the whole object which is messy):   
+  1. Deposit `$account.deposit(number); nil`
+  1. Withdraw `$account.withdraw(number); nil`
+  1. Print Statement `$account.statement; nil`
   
 2. Other Features Include:  
     1. Overdraft protection. Will not allow user to have negative balance
